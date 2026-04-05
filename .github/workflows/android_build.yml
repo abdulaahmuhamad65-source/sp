@@ -5,12 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build with Buildozer
-        uses: ArtemSerebriakov/buildozer-action@v1
+      - uses: ArtemSerebriakov/buildozer-action@v1
         with:
           command: yes | buildozer android debug
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: MyGame-APK
           path: bin/*.apk
+
