@@ -1,5 +1,6 @@
 name: Build APK
 on: [push, workflow_dispatch]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,3 +15,4 @@ jobs:
         with:
           name: MyGame-APK
           path: bin/*.apk
+
