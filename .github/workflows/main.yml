@@ -1,3 +1,4 @@
+
 name: Build APK
 on: [push, workflow_dispatch]
 
@@ -7,7 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build with Buildozer
-        uses: ArtemSerebriakov/buildozer-action@v1
+        # قمت بتغيير هذا السطر لنسخة تعمل الآن
+        uses: ArtemSerebriakov/buildozer-action@v1.6.1
         with:
           command: buildozer android debug
       - name: Upload APK
