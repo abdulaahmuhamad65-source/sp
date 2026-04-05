@@ -1,0 +1,14 @@
+name: Build APK
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ArtemSerebriakov/buildozer-action@v1
+        with:
+          command: yes | buildozer android debug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MyGame-APK
+          path: bin/*.apk
